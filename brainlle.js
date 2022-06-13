@@ -201,14 +201,14 @@ function update() {
                 currTile.classList.add("present");
                 
                 let keyTile = document.getElementById("Key" + letter);
-                if (!keyTile.classList.contains("correct")) {
+                if (keyTile !== null && !keyTile.classList.contains("correct")) {
                     keyTile.classList.add("present");
                 }
                 letterCount[letter] -= 1;
             }else { // letras que nao estao na palavra
                 currTile.classList.add("absent");
                 let keyTile = document.getElementById("Key" + letter);
-                keyTile.classList.add("absent")
+                if(keyTile !== null) keyTile.classList.add("absent")
             }
         }
     }
